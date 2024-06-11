@@ -55,7 +55,7 @@ if (typeof Turbolinks !== 'undefined') {
     setupTracking()
   })
 } else {
-  $(document).on('ready', function() {
+  $(document).ready(function() {
     setupTracking()
   })
 }
