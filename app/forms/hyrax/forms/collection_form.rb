@@ -39,6 +39,8 @@ module Hyrax
       # @return [Array] a list of parameters used by sanitize_params
       def self.build_permitted_params
         super + [{ based_near_attributes: [:id, :_destroy] }]
+      rescue NoMethodError
+        [{ based_near_attributes: [:id, :_destroy] }]
       end
 
       # @param model [::Collection] the collection model that backs this form
