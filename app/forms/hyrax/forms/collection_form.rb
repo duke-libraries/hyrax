@@ -38,7 +38,7 @@ module Hyrax
       # This describes the parameters we are expecting to receive from the client
       # @return [Array] a list of parameters used by sanitize_params
       def self.build_permitted_params
-        super(::Collection) + [{ based_near_attributes: [:id, :_destroy] }]
+        super + [{ based_near_attributes: [:id, :_destroy] }]
       rescue NoMethodError
         [{ based_near_attributes: [:id, :_destroy] }]
       end
