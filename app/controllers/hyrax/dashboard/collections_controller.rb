@@ -190,7 +190,7 @@ module Hyrax
         if @collection.save
           after_create_response
         else
-          Hyrax.logger.error(@collection.errors)
+          Hyrax.logger.error(@collection.errors.full_messages)
           after_create_errors(@collection.errors)
         end
       end
