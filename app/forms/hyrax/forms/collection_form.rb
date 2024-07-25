@@ -16,7 +16,12 @@ module Hyrax
       # Required for search builder (FIXME)
       alias collection model
 
-      self.model_class = Hyrax.config.collection_class
+      self.model_class = ::Collection
+      # RDR workaround: even with
+      # Hyrax.config.collection_class
+      # set to ::Collection,
+      # Hyrax::Forms::CollectionForm.model_class
+      # is still getting Hyrax::PcdmCollection
 
       self.membership_service_class = Collections::CollectionMemberSearchService
 
